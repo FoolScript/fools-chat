@@ -240,15 +240,26 @@ export class CrashifyParticipant {
       );
 
       for await (const fragment of response.text) {
-        await stream.markdown(fragment);
+        stream.markdown(fragment);
       }
 
-      await stream.markdown(
+      stream.markdown(
         "You can use the following commands:\n" +
-          "- `/list`: Generate a list of common crash causes\n" +
-          "- `/model`: Create an error model (usage: `/model ErrorName [description]`)\n" +
-          "- `/json`: Generate a sample crash report JSON based on the current file content\n" +
-          "- `/get`: Retrieve specific error information"
+          "- `/class`: Generate a class structure in the current language\n" +
+          "- `/function`: Generate a function in the current language\n" +
+          "- `/enum`: Demonstrate enumeration types\n" +
+          "- `/number`: Demonstrate number declarations and operations\n" +
+          "- `/string`: Demonstrate string declarations, operations, and methods\n" +
+          "- `/boolean`: Demonstrate boolean declarations, operations, and conditional usage\n" +
+          "- `/interface`: Generate an interface in the current language\n" +
+          "- `/object`: Demonstrate object creation, property access, and methods\n" +
+          "- `/array`: Demonstrate array declaration, initialization, and common operations\n" +
+          "- `/variable`: Demonstrate variable declaration, initialization, and scoping\n" +
+          "- `/null`: Demonstrate null handling and related concepts\n" +
+          "- `/ifelse`: Demonstrate if-else conditional statements\n" +
+          "- `/while`: Demonstrate while loops\n" +
+          "- `/language`: Provide information about the current programming language\n" +
+          "- `/types`: Demonstrate type-related concepts, including definitions and casting"
       );
     } catch (err) {
       this.handleError(err, stream);

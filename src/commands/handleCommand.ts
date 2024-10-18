@@ -47,6 +47,16 @@ export async function handleCommand(
 ) {
   const { language } = languageDetector.detect();
 
+  if (language === "Not detected") {
+    stream.markdown(
+      "I couldn't detect the programming language. Can you please specify the language you want to use?"
+    );
+    stream.markdown(
+      "You can do this by opening a file with the desired language or by explicitly mentioning the language in your request."
+    );
+    return;
+  }
+
   try {
     const { messages } = await renderPrompt(
       Prompt,
@@ -63,11 +73,11 @@ export async function handleCommand(
       stream.markdown(fragment);
     }
 
-    await stream.markdown(trailingString);
+    stream.markdown(trailingString);
   } catch (err) {
     if (err instanceof vscode.LanguageModelError) {
       console.error(err.message, err.code, err.cause);
-      stream.markdown(
+      await stream.markdown(
         "I'm sorry, I encountered an error while generating the example. Please try again or provide more specific requirements."
       );
     } else {
