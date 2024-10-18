@@ -4,6 +4,9 @@ All notable changes to the "crashify" extension will be documented in this file.
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## 1.3.0
+- Add fallback language detection
+
 ## 1.2.0
 - Data types and Hello World commands added
 - Fixed help text 
