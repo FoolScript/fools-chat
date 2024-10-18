@@ -1,0 +1,85 @@
+{
+  "name": "crashify-chat-extension",
+  "displayName": "Crashify Chat Extension",
+  "description": "Code in every language",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "AI",
+    "Chat",
+    "Debuggers"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "chatParticipants": [
+      {
+        "id": "crashify-chat-extension.crashify",
+        "name": "crashify",
+        "fullName": "Crashify",
+        "description": "Crashify assistant for debugging and crash analysis tasks",
+        "commands": [
+          {
+            "name": "class",
+            "description": "Generate a class in the current language"
+          },
+          {
+            "name": "function",
+            "description": "Generate a function in the current language"
+          },
+          {
+            "name": "number",
+            "description": "Demonstrate number declarations and operations"
+          },
+          {
+            "name": "string",
+            "description": "Demonstrate string declarations, operations, and methods"
+          },
+          {
+            "name": "boolean",
+            "description": "Demonstrate boolean declarations, operations, and conditional usage"
+          },
+          {
+            "name": "interface",
+            "description": "Generate an interface in the current language"
+          },
+          {
+            "name": "object",
+            "description": "Demonstrate object creation, property access, and methods"
+          },
+          {
+            "name": "array",
+            "description": "Demonstrate array declaration, initialization, and common operations"
+          },
+          {
+            "name": "variable",
+            "description": "Demonstrate variable declaration, initialization, and scoping"
+          },
+          {
+            "name": "language",
+            "description": "Provide information about the current programming language"
+          }
+        ]
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "lint": "eslint src --ext ts",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "16.x",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^6.7.0",
+    "@typescript-eslint/parser": "^6.7.0",
+    "eslint": "^8.44.0",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@vscode/prompt-tsx": "^0.2.11-alpha"
+  }
+}
