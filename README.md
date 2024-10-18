@@ -1,71 +1,90 @@
-# crashify README
+# Crashify VS Code Extension
 
-This is the README for your extension "crashify". After writing up a brief description, we recommend including the following sections.
+Crashify is a powerful VS Code chat extension designed to generate crash course style documentation for any programming language. It integrates seamlessly with the GitHub Copilot chat window, providing quick and easy access to language-specific information and code examples.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- **Multi-Language Support**: Crashify automatically detects the language of your active file and provides language-specific assistance.
+- **Crash Course Documentation**: Quickly generate concise, informative documentation for various programming concepts.
+- **Interactive Chat Interface**: Communicate with Crashify using natural language within the Copilot chat window.
+- **Code Examples**: Get relevant code snippets and examples for better understanding.
 
-For example if there is an image subfolder under your extension project workspace:
+### Available Commands
 
-\!\[feature X\]\(images/feature-x.png\)
+Crashify offers a variety of commands to generate documentation and code examples:
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+- `/class`: Get a crash course on classes in the current language
+- `/function`: Learn about functions and their usage
+- `/enum`: Understand enumeration types
+- `/number`: Explore number types and operations
+- `/string`: Discover string manipulations
+- `/boolean`: Learn about boolean operations
+- `/interface`: Understand interface definitions
+- `/object`: Get a crash course on objects and their usage
+- `/array`: Learn about array operations
+- `/variable`: Explore variable declarations and scoping
+- `/null`: Understand null handling
+- `/ifelse`: Learn about conditional statements
+- `/while`: Get examples of loop structures
+- `/types`: Explore type-related concepts
+- `/language`: Get comprehensive information about the current programming language
+
+## Installation
+
+### Install from VS Code Marketplace
+
+1. Open VS Code
+2. Go to the Extensions view (Ctrl+Shift+X)
+3. Search for "Crashify"
+4. Click Install
+
+### Manual Installation
+
+If you prefer to install the extension manually, follow these steps:
+
+1. Clone the repository or download the source code
+2. Open a terminal and navigate to the project directory
+3. Run `npm install` to install dependencies
+4. Run `npm run package` to create a .vsix file
+5. In VS Code, go to the Extensions view (Ctrl+Shift+X)
+6. Click on the "..." menu at the top of the Extensions view
+7. Choose "Install from VSIX..."
+8. Navigate to and select the .vsix file you created
+9. Click "Install"
+
+## Usage
+
+1. Open a file in VS Code
+2. Open the GitHub Copilot chat window
+3. Type `@crashify` followed by your query or command
+
+For example:
+- `@crashify /language` to get information about the current language
+- `@crashify Explain how to declare variables in this language`
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+- VS Code version 1.85.0 or higher
+- GitHub Copilot extension installed and activated
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+Currently, Crashify doesn't require any specific settings. It works out of the box!
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+Please report any issues you encounter on our [GitHub repository](https://github.com/jtmuller5/crashify/issues).
 
-## Release Notes
+## Contributing
 
-Users appreciate release notes as you update your extension.
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for more details.
 
-### 1.0.0
+## License
 
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+This extension is released under the [MIT License](LICENSE).
 
 ---
 
-## Following extension guidelines
+**Enjoy learning with Crashify!** 🚀
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+For more information, visit our [GitHub repository](https://github.com/jtmuller5/crashify).

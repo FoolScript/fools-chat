@@ -57,10 +57,10 @@ export async function handleCommand(
 
     const response = await languageModelService.sendRequest(messages, token);
 
-    await stream.markdown(`${leadingString} ${language}:`);
+    stream.markdown(`${leadingString} ${language}:\n`);
 
     for await (const fragment of response.text) {
-      await stream.markdown(fragment);
+      stream.markdown(fragment);
     }
 
     await stream.markdown(trailingString);

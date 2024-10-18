@@ -10,7 +10,7 @@
 		  "kind": "build",
 		  "isDefault": false
 		},
-		"problemMatcher": ["$tsc"]
+		"problemMatcher": []
 	  },
 	  {
 		"label": "Publish Package",
@@ -21,7 +21,7 @@
 		  "kind": "build",
 		  "isDefault": false
 		},
-		"problemMatcher": ["$tsc"]
+		"problemMatcher": []
 	  },
 	  {
 		"label": "Show Package Stats",
