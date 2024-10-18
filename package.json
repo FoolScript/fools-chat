@@ -85,6 +85,10 @@
           {
             "name": "types",
             "description": "Demonstrate type-related concepts, including definitions and casting"
+          },
+          {
+            "name": "dataTypes",
+            "description": "Demonstrate various data types available in the current language"
           }
         ]
       }

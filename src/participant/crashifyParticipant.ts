@@ -18,6 +18,7 @@ import { StringPrompt } from "../prompts/stringPrompt";
 import { TypesPrompt } from "../prompts/typesPrompt";
 import { VariablePrompt } from "../prompts/variablePrompt";
 import { WhilePrompt } from "../prompts/whilePrompt";
+import { DataTypesPrompt } from "../prompts/dataTypesPrompt";
 
 export class CrashifyParticipant {
   private fileContentProvider: FileContentProvider;
@@ -214,6 +215,18 @@ export class CrashifyParticipant {
           "Demonstrating type-related concepts in",
           TypesPrompt,
           "These examples cover various aspects of types in the language. You can modify and extend them based on your specific needs."
+        );
+        break;
+      case "dataTypes":
+        await handleCommand(
+          request,
+          stream,
+          token,
+          this.languageDetector,
+          this.languageModelService,
+          "Demonstrating various data types in",
+          DataTypesPrompt,
+          "These examples show the common data types and their usage. You can modify and extend them based on your specific needs."
         );
         break;
       default:

@@ -17,6 +17,7 @@ import { WhilePrompt } from "../prompts/whilePrompt";
 import { LanguageInfoPrompt } from "../prompts/languageInfoPrompt";
 import { LanguageDetector } from "../utils/languageDetector";
 import { LanguageModelService } from "../services/languageModelService";
+import { DataTypesPrompt } from "../prompts/dataTypesPrompt";
 
 type PromptType =
   | typeof ClassPrompt
@@ -33,7 +34,8 @@ type PromptType =
   | typeof IfElsePrompt
   | typeof WhilePrompt
   | typeof EnumPrompt
-  | typeof TypesPrompt;
+  | typeof TypesPrompt
+  | typeof DataTypesPrompt;
 
 export async function handleCommand(
   request: vscode.ChatRequest,

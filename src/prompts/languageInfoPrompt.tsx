@@ -45,6 +45,8 @@ export class LanguageInfoPrompt extends PromptElement<LanguageInfoPromptProps> {
           <br />
           Example (Each item should be on a new line.):
           <br />
+          Language: [Language]
+          <br />
           - **Types**: [Type system]
           <br />
           - **Extension(s)**: [File extension(s)] <br />
