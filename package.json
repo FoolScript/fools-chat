@@ -2,7 +2,7 @@
   "name": "crashify-chat-extension",
   "displayName": "Crashify Chat Extension",
   "description": "Code in every language",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "publisher": "CodeontheRocks",
   "icon": "crashify.png",
   "engines": {
