@@ -3,13 +3,18 @@
   "displayName": "Crashify Chat Extension",
   "description": "Code in every language",
   "version": "0.0.1",
+  "publisher": "CodeontheRocks",
+  "icon": "crashify.png",
   "engines": {
     "vscode": "^1.85.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jtmuller5/crashify"
+  },
   "categories": [
     "AI",
-    "Chat",
-    "Debuggers"
+    "Chat"
   ],
   "activationEvents": [],
   "main": "./out/extension.js",
@@ -56,6 +61,10 @@
           {
             "name": "variable",
             "description": "Demonstrate variable declaration, initialization, and scoping"
+          },
+          {
+            "name": "null",
+            "description": "Demonstrate null handling and related concepts"
           },
           {
             "name": "language",

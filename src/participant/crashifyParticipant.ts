@@ -12,6 +12,7 @@ import { handleLanguageCommand } from "../commands/languageCommand";
 import { handleObjectCommand } from "../commands/objectCommand";
 import { handleArrayCommand } from "../commands/arrayCommand";
 import { handleVariableCommand } from "../commands/variableCommand";
+import { handleNullCommand } from "../commands/nullCommand";
 
 export class CrashifyParticipant {
   private fileContentProvider: FileContentProvider;
@@ -113,6 +114,15 @@ export class CrashifyParticipant {
         break;
       case "variable":
         await handleVariableCommand(
+          request,
+          stream,
+          token,
+          this.languageDetector,
+          this.languageModelService
+        );
+        break;
+      case "null":
+        await handleNullCommand(
           request,
           stream,
           token,
