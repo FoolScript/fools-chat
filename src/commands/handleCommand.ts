@@ -18,6 +18,7 @@ import { LanguageInfoPrompt } from "../prompts/languageInfoPrompt";
 import { LanguageDetector } from "../utils/languageDetector";
 import { LanguageModelService } from "../services/languageModelService";
 import { DataTypesPrompt } from "../prompts/dataTypesPrompt";
+import { HelloWorldPrompt } from "../prompts/helloWorldPrompt";
 
 type PromptType =
   | typeof ClassPrompt
@@ -35,7 +36,8 @@ type PromptType =
   | typeof WhilePrompt
   | typeof EnumPrompt
   | typeof TypesPrompt
-  | typeof DataTypesPrompt;
+  | typeof DataTypesPrompt
+  | typeof HelloWorldPrompt;
 
 export async function handleCommand(
   request: vscode.ChatRequest,

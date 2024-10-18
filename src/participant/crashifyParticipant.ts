@@ -19,6 +19,7 @@ import { TypesPrompt } from "../prompts/typesPrompt";
 import { VariablePrompt } from "../prompts/variablePrompt";
 import { WhilePrompt } from "../prompts/whilePrompt";
 import { DataTypesPrompt } from "../prompts/dataTypesPrompt";
+import { HelloWorldPrompt } from "../prompts/helloWorldPrompt";
 
 export class CrashifyParticipant {
   private fileContentProvider: FileContentProvider;
@@ -227,6 +228,18 @@ export class CrashifyParticipant {
           "Demonstrating various data types in",
           DataTypesPrompt,
           "These examples show the common data types and their usage. You can modify and extend them based on your specific needs."
+        );
+        break;
+      case "helloWorld":
+        await handleCommand(
+          request,
+          stream,
+          token,
+          this.languageDetector,
+          this.languageModelService,
+          "Explaining how to create and run a 'Hello, World!' program in",
+          HelloWorldPrompt,
+          "This guide provides a simple introduction to creating and running a program in the language. You can use this as a starting point for more complex projects."
         );
         break;
       default:

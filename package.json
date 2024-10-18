@@ -89,6 +89,10 @@
           {
             "name": "dataTypes",
             "description": "Demonstrate various data types available in the current language"
+          },
+          {
+            "name": "helloWorld",
+            "description": "Explain how to create and run a simple 'Hello, World!' program"
           }
         ]
       }
