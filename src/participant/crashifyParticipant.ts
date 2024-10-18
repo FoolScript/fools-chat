@@ -2,17 +2,22 @@ import * as vscode from "vscode";
 import { LanguageModelService } from "../services/languageModelService";
 import { LanguageDetector } from "../utils/languageDetector";
 import { FileContentProvider } from "../utils/fileContentProvider";
-import { handleClassCommand } from "../commands/classCommand";
-import { handleFunctionCommand } from "../commands/functionCommand";
-import { handleNumberCommand } from "../commands/numberCommand";
-import { handleStringCommand } from "../commands/stringCommand";
-import { handleBooleanCommand } from "../commands/booleanCommand";
-import { handleInterfaceCommand } from "../commands/interfaceCommand";
-import { handleLanguageCommand } from "../commands/languageCommand";
-import { handleObjectCommand } from "../commands/objectCommand";
-import { handleArrayCommand } from "../commands/arrayCommand";
-import { handleVariableCommand } from "../commands/variableCommand";
-import { handleNullCommand } from "../commands/nullCommand";
+import { handleCommand } from "../commands/handleCommand";
+import { ArrayPrompt } from "../prompts/arrayPrompt";
+import { BooleanPrompt } from "../prompts/booleanPrompt";
+import { ClassPrompt } from "../prompts/classPrompt";
+import { EnumPrompt } from "../prompts/enumPrompt";
+import { FunctionPrompt } from "../prompts/functionPrompt";
+import { IfElsePrompt } from "../prompts/ifElsePrompt";
+import { InterfacePrompt } from "../prompts/interfacePrompt";
+import { LanguageInfoPrompt } from "../prompts/languageInfoPrompt";
+import { NullPrompt } from "../prompts/nullPrompt";
+import { NumberPrompt } from "../prompts/numberPrompt";
+import { ObjectPrompt } from "../prompts/objectPrompt";
+import { StringPrompt } from "../prompts/stringPrompt";
+import { TypesPrompt } from "../prompts/typesPrompt";
+import { VariablePrompt } from "../prompts/variablePrompt";
+import { WhilePrompt } from "../prompts/whilePrompt";
 
 export class CrashifyParticipant {
   private fileContentProvider: FileContentProvider;
@@ -32,102 +37,183 @@ export class CrashifyParticipant {
   ) {
     switch (request.command) {
       case "class":
-        await handleClassCommand(
+        await handleCommand(
           request,
           stream,
           token,
           this.languageDetector,
-          this.languageModelService
+          this.languageModelService,
+          "Generating an example class in",
+          ClassPrompt,
+          "This example class demonstrates basic structure and common patterns. You can modify and extend it based on your specific needs."
         );
         break;
       case "function":
-        await handleFunctionCommand(
+        await handleCommand(
           request,
           stream,
           token,
           this.languageDetector,
-          this.languageModelService
+          this.languageModelService,
+          "Generating an example function in",
+          FunctionPrompt,
+          "This example function demonstrates basic structure and common patterns. You can modify and extend it based on your specific needs."
         );
         break;
       case "number":
-        await handleNumberCommand(
+        await handleCommand(
           request,
           stream,
           token,
           this.languageDetector,
-          this.languageModelService
+          this.languageModelService,
+          "Demonstrating number declarations and operations in",
+          NumberPrompt,
+          "This example shows common number operations and declarations. You can modify and extend it based on your specific needs."
         );
         break;
       case "string":
-        await handleStringCommand(
+        await handleCommand(
           request,
           stream,
           token,
           this.languageDetector,
-          this.languageModelService
+          this.languageModelService,
+          "Demonstrating string declarations, operations, and methods in",
+          StringPrompt,
+          "This example shows common string operations and methods. You can modify and extend it based on your specific needs."
         );
         break;
       case "boolean":
-        await handleBooleanCommand(
+        await handleCommand(
           request,
           stream,
           token,
           this.languageDetector,
-          this.languageModelService
+          this.languageModelService,
+          "Demonstrating boolean declarations, operations, and conditional usage in",
+          BooleanPrompt,
+          "This example shows common boolean operations and conditional usage. You can modify and extend it based on your specific needs."
         );
         break;
       case "interface":
-        await handleInterfaceCommand(
+        await handleCommand(
           request,
           stream,
           token,
           this.languageDetector,
-          this.languageModelService
+          this.languageModelService,
+          "Generating an example interface in",
+          InterfacePrompt,
+          "This example interface demonstrates basic structure and common patterns. You can modify and extend it based on your specific needs."
         );
         break;
       case "language":
-        await handleLanguageCommand(
+        await handleCommand(
           request,
           stream,
           token,
           this.languageDetector,
-          this.languageModelService
+          this.languageModelService,
+          "Providing information about",
+          LanguageInfoPrompt,
+          "This information should give you a good overview of the language. If you need more specific details, feel free to ask!"
         );
         break;
       case "object":
-        await handleObjectCommand(
+        await handleCommand(
           request,
           stream,
           token,
           this.languageDetector,
-          this.languageModelService
+          this.languageModelService,
+          "Demonstrating object creation, property access, and methods in",
+          ObjectPrompt,
+          "This example shows basic object manipulation. You can modify and extend it based on your specific needs."
         );
         break;
       case "array":
-        await handleArrayCommand(
+        await handleCommand(
           request,
           stream,
           token,
           this.languageDetector,
-          this.languageModelService
+          this.languageModelService,
+          "Demonstrating array declaration, initialization, and common operations in",
+          ArrayPrompt,
+          "This example shows basic array manipulation. You can modify and extend it based on your specific needs."
         );
         break;
       case "variable":
-        await handleVariableCommand(
+        await handleCommand(
           request,
           stream,
           token,
           this.languageDetector,
-          this.languageModelService
+          this.languageModelService,
+          "Demonstrating variable declaration, initialization, and scoping in",
+          VariablePrompt,
+          "This example shows basic variable usage and scoping. You can modify and extend it based on your specific needs."
         );
         break;
       case "null":
-        await handleNullCommand(
+        await handleCommand(
           request,
           stream,
           token,
           this.languageDetector,
-          this.languageModelService
+          this.languageModelService,
+          "Demonstrating null handling and related concepts in",
+          NullPrompt,
+          "This example shows how to work with null values and avoid common pitfalls. Adjust the practices based on your specific use case and language features."
+        );
+        break;
+      case "ifelse":
+        await handleCommand(
+          request,
+          stream,
+          token,
+          this.languageDetector,
+          this.languageModelService,
+          "Demonstrating if-else conditional statements in",
+          IfElsePrompt,
+          "This example shows basic if-else usage. You can modify and extend it based on your specific needs."
+        );
+        break;
+      case "while":
+        await handleCommand(
+          request,
+          stream,
+          token,
+          this.languageDetector,
+          this.languageModelService,
+          "Demonstrating while loops in",
+          WhilePrompt,
+          "This example shows basic while loop usage. You can modify and extend it based on your specific needs."
+        );
+        break;
+      case "enum":
+        await handleCommand(
+          request,
+          stream,
+          token,
+          this.languageDetector,
+          this.languageModelService,
+          "Demonstrating enumerations in",
+          EnumPrompt,
+          "This example shows basic enum usage. You can modify and extend it based on your specific needs."
+        );
+        break;
+      case "types":
+        await handleCommand(
+          request,
+          stream,
+          token,
+          this.languageDetector,
+          this.languageModelService,
+          "Demonstrating type-related concepts in",
+          TypesPrompt,
+          "These examples cover various aspects of types in the language. You can modify and extend them based on your specific needs."
         );
         break;
       default:

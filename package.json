@@ -35,6 +35,10 @@
             "description": "Generate a function in the current language"
           },
           {
+            "name": "enum",
+            "description": "Demonstrate enumeration types"
+          },
+          {
             "name": "number",
             "description": "Demonstrate number declarations and operations"
           },
@@ -67,8 +71,20 @@
             "description": "Demonstrate null handling and related concepts"
           },
           {
+            "name": "ifelse",
+            "description": "Demonstrate if-else conditional statements"
+          },
+          {
+            "name": "while",
+            "description": "Demonstrate while loops"
+          },
+          {
             "name": "language",
             "description": "Provide information about the current programming language"
+          },
+          {
+            "name": "types",
+            "description": "Demonstrate type-related concepts, including definitions and casting"
           }
         ]
       }
