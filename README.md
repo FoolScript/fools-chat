@@ -4,7 +4,7 @@ Crashify is a powerful VS Code chat extension designed to generate crash course 
 
 ## Features
 
-- **Multi-Language Support**: Crashify automatically detects the language of your active file and provides language-specific assistance.
+- **Multi-Language Support**: Crashify automatically detects the [language](https://code.visualstudio.com/docs/languages/identifiers) of your active file and provides language-specific assistance.
 - **Crash Course Documentation**: Quickly generate concise, informative documentation for various programming concepts.
 - **Interactive Chat Interface**: Communicate with Crashify using natural language within the Copilot chat window.
 - **Code Examples**: Get relevant code snippets and examples for better understanding.
