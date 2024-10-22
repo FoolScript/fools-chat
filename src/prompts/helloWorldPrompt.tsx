@@ -5,13 +5,9 @@ import {
     AssistantMessage,
     UserMessage,
   } from "@vscode/prompt-tsx";
+import { CommonPromptProps } from "./commonPromptProps";
   
-  export interface HelloWorldPromptProps extends BasePromptElementProps {
-    language: string;
-    userQuery: string;
-  }
-  
-  export class HelloWorldPrompt extends PromptElement<HelloWorldPromptProps> {
+  export class HelloWorldPrompt extends PromptElement<CommonPromptProps> {
     render(_state: void, _sizing: PromptSizing) {
       return (
         <>

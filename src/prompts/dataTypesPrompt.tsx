@@ -5,13 +5,9 @@ import {
     AssistantMessage,
     UserMessage,
   } from "@vscode/prompt-tsx";
+import { CommonPromptProps } from "./commonPromptProps";
   
-  export interface DataTypesPromptProps extends BasePromptElementProps {
-    language: string;
-    userQuery: string;
-  }
-  
-  export class DataTypesPrompt extends PromptElement<DataTypesPromptProps> {
+  export class DataTypesPrompt extends PromptElement<CommonPromptProps> {
     render(_state: void, _sizing: PromptSizing) {
       return (
         <>

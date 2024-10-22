@@ -5,13 +5,9 @@ import {
     AssistantMessage,
     UserMessage,
   } from "@vscode/prompt-tsx";
-  
-  export interface BooleanPromptProps extends BasePromptElementProps {
-    language: string;
-    userQuery: string;
-  }
-  
-  export class BooleanPrompt extends PromptElement<BooleanPromptProps> {
+import { CommonPromptProps } from "./commonPromptProps";
+ 
+  export class BooleanPrompt extends PromptElement<CommonPromptProps> {
     render(_state: void, _sizing: PromptSizing) {
       return (
         <>
