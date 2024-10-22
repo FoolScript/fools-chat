@@ -5,13 +5,9 @@ import {
     AssistantMessage,
     UserMessage,
   } from "@vscode/prompt-tsx";
-  
-  export interface EnumPromptProps extends BasePromptElementProps {
-    language: string;
-    userQuery: string;
-  }
-  
-  export class EnumPrompt extends PromptElement<EnumPromptProps> {
+import { CommonPromptProps } from "./commonPromptProps";
+ 
+  export class EnumPrompt extends PromptElement<CommonPromptProps> {
     render(_state: void, _sizing: PromptSizing) {
       return (
         <>

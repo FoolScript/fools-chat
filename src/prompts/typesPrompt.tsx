@@ -5,13 +5,9 @@ import {
     AssistantMessage,
     UserMessage,
   } from "@vscode/prompt-tsx";
+import { CommonPromptProps } from "./commonPromptProps";
   
-  export interface TypesPromptProps extends BasePromptElementProps {
-    language: string;
-    userQuery: string;
-  }
-  
-  export class TypesPrompt extends PromptElement<TypesPromptProps> {
+  export class TypesPrompt extends PromptElement<CommonPromptProps> {
     render(_state: void, _sizing: PromptSizing) {
       return (
         <>

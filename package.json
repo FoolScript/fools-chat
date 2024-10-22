@@ -93,6 +93,38 @@
           {
             "name": "helloWorld",
             "description": "Explain how to create and run a simple 'Hello, World!' program"
+          },
+          {
+            "name": "entry",
+            "description": "Explain how programs start and the entry point structure in the current language"
+          },
+          {
+            "name": "structure",
+            "description": "Provide recommended project structure and file organization for the current language"
+          },
+          {
+            "name": "patternMvc",
+            "description": "Show how to implement Model-View-Controller pattern in the current language"
+          },
+          {
+            "name": "patternRepository",
+            "description": "Show how to implement Repository pattern in the current language"
+          },
+          {
+            "name": "patternFactory",
+            "description": "Show how to implement Factory pattern in the current language"
+          },
+          {
+            "name": "patternSingleton",
+            "description": "Show how to implement Singleton pattern in the current language"
+          },
+          {
+            "name": "patternObserver",
+            "description": "Show how to implement Observer pattern in the current language"
+          },
+          {
+            "name": "patternStrategy",
+            "description": "Show how to implement Strategy pattern in the current language"
           }
         ]
       }

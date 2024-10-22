@@ -13,21 +13,40 @@ Crashify is a powerful VS Code chat extension designed to generate crash course 
 
 Crashify offers a variety of commands to generate documentation and code examples:
 
+#### Basic Concepts
 - `/class`: Get a crash course on classes in the current language
 - `/function`: Learn about functions and their usage
 - `/enum`: Understand enumeration types
+- `/variable`: Explore variable declarations and scoping
+
+#### Data Types & Operations
 - `/number`: Explore number types and operations
 - `/string`: Discover string manipulations
 - `/boolean`: Learn about boolean operations
-- `/interface`: Understand interface definitions
-- `/object`: Get a crash course on objects and their usage
 - `/array`: Learn about array operations
-- `/variable`: Explore variable declarations and scoping
+- `/object`: Get a crash course on objects and their usage
 - `/null`: Understand null handling
+
+#### Control Flow
 - `/ifelse`: Learn about conditional statements
 - `/while`: Get examples of loop structures
+
+#### Project Structure
+- `/entry`: Understand program entry points and initialization
+- `/structure`: Learn about recommended project organization and file structure
+
+#### Design Patterns
+- `/patternMvc`: Learn about the Model-View-Controller pattern
+- `/patternRepository`: Understand the Repository pattern
+- `/patternFactory`: Explore the Factory pattern
+- `/patternSingleton`: Learn about the Singleton pattern
+- `/patternObserver`: Understand the Observer pattern
+- `/patternStrategy`: Explore the Strategy pattern
+
+#### Language Information
 - `/types`: Explore type-related concepts
 - `/language`: Get comprehensive information about the current programming language
+- `/interface`: Understand interface definitions
 
 ## Installation
 
@@ -58,8 +77,10 @@ If you prefer to install the extension manually, follow these steps:
 2. Open the GitHub Copilot chat window
 3. Type `@crashify` followed by your query or command
 
-For example:
+Examples:
 - `@crashify /language` to get information about the current language
+- `@crashify /patternStrategy` to learn about the Strategy pattern
+- `@crashify /structure` to understand project organization
 - `@crashify Explain how to declare variables in this language`
 
 ## Requirements
@@ -88,3 +109,4 @@ This extension is released under the [MIT License](LICENSE).
 **Enjoy learning with Crashify!** 🚀
 
 For more information, visit our [GitHub repository](https://github.com/jtmuller5/crashify).
+

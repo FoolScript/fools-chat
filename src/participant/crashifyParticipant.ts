@@ -20,6 +20,9 @@ import { VariablePrompt } from "../prompts/variablePrompt";
 import { WhilePrompt } from "../prompts/whilePrompt";
 import { DataTypesPrompt } from "../prompts/dataTypesPrompt";
 import { HelloWorldPrompt } from "../prompts/helloWorldPrompt";
+import { EntryPrompt } from "../prompts/entryPrompt";
+import { PatternPrompt } from "../prompts/patternPrompt";
+import { StructurePrompt } from "../prompts/structurePrompt";
 
 export class CrashifyParticipant {
   private fileContentProvider: FileContentProvider;
@@ -242,8 +245,54 @@ export class CrashifyParticipant {
           "This guide provides a simple introduction to creating and running a program in the language. You can use this as a starting point for more complex projects."
         );
         break;
+      case "entry":
+        await handleCommand(
+          request,
+          stream,
+          token,
+          this.languageDetector,
+          this.languageModelService,
+          "Explaining program entry points in",
+          EntryPrompt,
+          "This example shows how programs start and are structured in this language. You can modify based on your specific needs."
+        );
+        break;
+
+      case "structure":
+        await handleCommand(
+          request,
+          stream,
+          token,
+          this.languageDetector,
+          this.languageModelService,
+          "Recommending project structure for",
+          StructurePrompt,
+          "This structure represents common best practices. Adapt it based on your project's specific needs."
+        );
+        break;
+
       default:
-        await this.handleGeneralRequest(request, stream, token);
+        // Handle pattern commands
+        if (request.command?.startsWith("pattern")) {
+          // Extract pattern name by removing 'pattern' prefix and converting first letter to lowercase
+          const patternName = request.command.replace("pattern", "");
+          const normalizedPatternName =
+            patternName.charAt(0).toLowerCase() + patternName.slice(1);
+
+          await handleCommand(
+            request,
+            stream,
+            token,
+            this.languageDetector,
+            this.languageModelService,
+            `Demonstrating the ${normalizedPatternName} pattern in`,
+            PatternPrompt,
+            "This example shows a typical implementation of the pattern. Adapt it based on your specific needs.",
+            { patternName: normalizedPatternName }
+          );
+        } else {
+          await this.handleGeneralRequest(request, stream, token);
+        }
     }
   }
 
