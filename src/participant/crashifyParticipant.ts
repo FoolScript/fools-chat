@@ -291,7 +291,12 @@ export class CrashifyParticipant {
             { patternName: normalizedPatternName }
           );
         } else {
-          await this.handleGeneralRequest(request, stream, token);
+          await this.handleGeneralRequest(
+            request,
+            stream,
+            token,
+            this.languageDetector
+          );
         }
     }
   }
@@ -299,11 +304,14 @@ export class CrashifyParticipant {
   private async handleGeneralRequest(
     request: vscode.ChatRequest,
     stream: vscode.ChatResponseStream,
-    token: vscode.CancellationToken
+    token: vscode.CancellationToken,
+    languageDetector: LanguageDetector
   ) {
+    const { language } = languageDetector.detect();
+
     const prompt = [
       vscode.LanguageModelChatMessage.User(
-        "You are Crashify, an AI assistant specializing in debugging and crash analysis tasks. Respond to queries about error handling, debugging techniques, and crash report analysis."
+        `You are Crashify, an AI assistant specializing in ${language}. Please respond to the user's query about ${language}:`
       ),
       vscode.LanguageModelChatMessage.User(request.prompt),
     ];

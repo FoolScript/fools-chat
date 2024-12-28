@@ -4,6 +4,10 @@ All notable changes to the "crashify" extension will be documented in this file.
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [2.0.0] - 2024-12-27
+### Changed
+- Pass current file language to Crashify participant for generic queries
+
 ## [1.4.0] - 2024-10-22
 ### Added
 - New project structure commands:
