@@ -50,7 +50,7 @@ src/
   commands/
     handleCommand.ts
   participant/
-    crashifyParticipant.ts
+    foolscriptParticipant.ts
   prompts/
     arrayPrompt.tsx
     booleanPrompt.tsx
@@ -171,7 +171,7 @@ export async function handleCommand(
 }
 
 ================
-File: src/participant/crashifyParticipant.ts
+File: src/participant/foolscriptParticipant.ts
 ================
 import * as vscode from "vscode";
 import { LanguageModelService } from "../services/languageModelService";
@@ -194,7 +194,7 @@ import { TypesPrompt } from "../prompts/typesPrompt";
 import { VariablePrompt } from "../prompts/variablePrompt";
 import { WhilePrompt } from "../prompts/whilePrompt";
 
-export class CrashifyParticipant {
+export class FoolScriptParticipant {
   private fileContentProvider: FileContentProvider;
 
   constructor(
@@ -403,7 +403,7 @@ export class CrashifyParticipant {
   ) {
     const prompt = [
       vscode.LanguageModelChatMessage.User(
-        "You are Crashify, an AI assistant specializing in debugging and crash analysis tasks. Respond to queries about error handling, debugging techniques, and crash report analysis."
+        "You are FoolScript, an AI assistant specializing in debugging and crash analysis tasks. Respond to queries about error handling, debugging techniques, and crash report analysis."
       ),
       vscode.LanguageModelChatMessage.User(request.prompt),
     ];
@@ -1262,18 +1262,18 @@ File: src/extension.ts
 import * as vscode from "vscode";
 import { LanguageDetector } from "./utils/languageDetector";
 import { LanguageModelService } from "./services/languageModelService";
-import { CrashifyParticipant } from "./participant/crashifyParticipant";
+import { FoolScriptParticipant } from "./participant/foolscriptParticipant";
 
 export function activate(context: vscode.ExtensionContext) {
   const languageDetector = new LanguageDetector();
   const languageModelService = new LanguageModelService();
 
-  const crashify = new CrashifyParticipant(languageDetector, languageModelService);
+  const foolscript = new FoolScriptParticipant(languageDetector, languageModelService);
 
   context.subscriptions.push(
     vscode.chat.createChatParticipant(
-      "crashify-chat-extension.crashify",
-      crashify.handleRequest.bind(crashify)
+      "foolscript-chat-extension.foolscript",
+      foolscript.handleRequest.bind(foolscript)
     )
   );
 }
@@ -1352,7 +1352,7 @@ File: CHANGELOG.md
 ================
 # Change Log
 
-All notable changes to the "crashify" extension will be documented in this file.
+All notable changes to the "foolscript" extension will be documented in this file.
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
@@ -1389,18 +1389,18 @@ SOFTWARE.
 File: package.json
 ================
 {
-  "name": "crashify-chat-extension",
-  "displayName": "Crashify Chat Extension",
+  "name": "foolscript-chat-extension",
+  "displayName": "FoolScript Chat Extension",
   "description": "Code in every language",
   "version": "0.0.1",
   "publisher": "CodeontheRocks",
-  "icon": "crashify.png",
+  "icon": "foolscript.png",
   "engines": {
     "vscode": "^1.85.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jtmuller5/crashify"
+    "url": "https://github.com/jtmuller5/foolscript"
   },
   "categories": [
     "AI",
@@ -1411,10 +1411,10 @@ File: package.json
   "contributes": {
     "chatParticipants": [
       {
-        "id": "crashify-chat-extension.crashify",
-        "name": "crashify",
-        "fullName": "Crashify",
-        "description": "Crashify assistant for debugging and crash analysis tasks",
+        "id": "foolscript-chat-extension.foolscript",
+        "name": "foolscript",
+        "fullName": "FoolScript",
+        "description": "FoolScript assistant for debugging and crash analysis tasks",
         "commands": [
           {
             "name": "class",
@@ -1502,9 +1502,9 @@ File: package.json
 ================
 File: README.md
 ================
-# crashify README
+# foolscript README
 
-This is the README for your extension "crashify". After writing up a brief description, we recommend including the following sections.
+This is the README for your extension "foolscript". After writing up a brief description, we recommend including the following sections.
 
 ## Features
 

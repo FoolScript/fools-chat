@@ -1,12 +1,12 @@
 # Change Log
 
-All notable changes to the "crashify" extension will be documented in this file.
+All notable changes to the "foolscript" extension will be documented in this file.
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
 ## [2.0.0] - 2024-12-27
 ### Changed
-- Pass current file language to Crashify participant for generic queries
+- Pass current file language to FoolScript participant for generic queries
 
 ## [1.4.0] - 2024-10-22
 ### Added
@@ -36,7 +36,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 - Help text improvements
 
 ## [1.0.0] - 2024-10
-- Initial release of Crashify
+- Initial release of FoolScript
 - Integration with GitHub Copilot chat
 - Basic language detection and information
 - Crash course style documentation generation for various programming concepts

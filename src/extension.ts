@@ -1,18 +1,18 @@
 import * as vscode from "vscode";
 import { LanguageDetector } from "./utils/languageDetector";
 import { LanguageModelService } from "./services/languageModelService";
-import { CrashifyParticipant } from "./participant/crashifyParticipant";
+import { FoolScriptParticipant } from "./participant/foolscriptParticipant";
 
 export function activate(context: vscode.ExtensionContext) {
   const languageDetector = new LanguageDetector();
   const languageModelService = new LanguageModelService();
 
-  const crashify = new CrashifyParticipant(languageDetector, languageModelService);
+  const foolscript = new FoolScriptParticipant(languageDetector, languageModelService);
 
   context.subscriptions.push(
     vscode.chat.createChatParticipant(
-      "crashify-chat-extension.crashify",
-      crashify.handleRequest.bind(crashify)
+      "fools-chat-extension.foolscript",
+      foolscript.handleRequest.bind(foolscript)
     )
   );
 }

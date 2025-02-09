@@ -24,7 +24,7 @@ import { EntryPrompt } from "../prompts/entryPrompt";
 import { PatternPrompt } from "../prompts/patternPrompt";
 import { StructurePrompt } from "../prompts/structurePrompt";
 
-export class CrashifyParticipant {
+export class FoolScriptParticipant {
   private fileContentProvider: FileContentProvider;
 
   constructor(
@@ -309,11 +309,18 @@ export class CrashifyParticipant {
   ) {
     const { language } = languageDetector.detect();
 
+    // Replace common FoolScript placeholders in the request
+    const foolsRequest = request.prompt
+      .toLowerCase()
+      .replace("juggle", "loop through")
+      .replace("dance", "create a function that returns")
+      .replace("sing", "properly format and print out my");
+
     const prompt = [
       vscode.LanguageModelChatMessage.User(
-        `You are Crashify, an AI assistant specializing in ${language}. Please respond to the user's query about ${language}:`
+        `You are FoolScript, an AI assistant specializing in ${language}. The user is describing the code they want to write. Rewrite their request using idiomatic ${language}:`
       ),
-      vscode.LanguageModelChatMessage.User(request.prompt),
+      vscode.LanguageModelChatMessage.User(foolsRequest),
     ];
 
     try {
@@ -326,7 +333,7 @@ export class CrashifyParticipant {
         stream.markdown(fragment);
       }
 
-      stream.markdown(
+      /* stream.markdown(
         "You can use the following commands:\n" +
           "- `/class`: Generate a class structure in the current language\n" +
           "- `/function`: Generate a function in the current language\n" +
@@ -343,7 +350,7 @@ export class CrashifyParticipant {
           "- `/while`: Demonstrate while loops\n" +
           "- `/language`: Provide information about the current programming language\n" +
           "- `/types`: Demonstrate type-related concepts, including definitions and casting"
-      );
+      ); */
     } catch (err) {
       this.handleError(err, stream);
     }

@@ -1,17 +1,17 @@
-# Crashify VS Code Extension
+# FoolScript VS Code Extension
 
-Crashify is a powerful VS Code chat extension designed to generate crash course style documentation for any programming language. It integrates seamlessly with the GitHub Copilot chat window, providing quick and easy access to language-specific information and code examples.
+FoolScript is a powerful VS Code chat extension designed to generate crash course style documentation for any programming language. It integrates seamlessly with the GitHub Copilot chat window, providing quick and easy access to language-specific information and code examples.
 
 ## Features
 
-- **Multi-Language Support**: Crashify automatically detects the [language](https://code.visualstudio.com/docs/languages/identifiers) of your active file and provides language-specific assistance.
+- **Multi-Language Support**: FoolScript automatically detects the [language](https://code.visualstudio.com/docs/languages/identifiers) of your active file and provides language-specific assistance.
 - **Crash Course Documentation**: Quickly generate concise, informative documentation for various programming concepts.
-- **Interactive Chat Interface**: Communicate with Crashify using natural language within the Copilot chat window.
+- **Interactive Chat Interface**: Communicate with FoolScript using natural language within the Copilot chat window.
 - **Code Examples**: Get relevant code snippets and examples for better understanding.
 
 ### Available Commands
 
-Crashify offers a variety of commands to generate documentation and code examples:
+FoolScript offers a variety of commands to generate documentation and code examples:
 
 #### Basic Concepts
 - `/class`: Get a crash course on classes in the current language
@@ -54,7 +54,7 @@ Crashify offers a variety of commands to generate documentation and code example
 
 1. Open VS Code
 2. Go to the Extensions view (Ctrl+Shift+X)
-3. Search for "Crashify"
+3. Search for "FoolScript"
 4. Click Install
 
 ### Manual Installation
@@ -75,13 +75,13 @@ If you prefer to install the extension manually, follow these steps:
 
 1. Open a file in VS Code
 2. Open the GitHub Copilot chat window
-3. Type `@crashify` followed by your query or command
+3. Type `@foolscript` followed by your query or command
 
 Examples:
-- `@crashify /language` to get information about the current language
-- `@crashify /patternStrategy` to learn about the Strategy pattern
-- `@crashify /structure` to understand project organization
-- `@crashify Explain how to declare variables in this language`
+- `@foolscript /language` to get information about the current language
+- `@foolscript /patternStrategy` to learn about the Strategy pattern
+- `@foolscript /structure` to understand project organization
+- `@foolscript Explain how to declare variables in this language`
 
 ## Requirements
 
@@ -90,11 +90,11 @@ Examples:
 
 ## Extension Settings
 
-Currently, Crashify doesn't require any specific settings. It works out of the box!
+Currently, FoolScript doesn't require any specific settings. It works out of the box!
 
 ## Known Issues
 
-Please report any issues you encounter on our [GitHub repository](https://github.com/jtmuller5/crashify/issues).
+Please report any issues you encounter on our [GitHub repository](https://github.com/jtmuller5/foolscript/issues).
 
 ## Contributing
 
@@ -106,7 +106,7 @@ This extension is released under the [MIT License](LICENSE).
 
 ---
 
-**Enjoy learning with Crashify!** 🚀
+**Enjoy learning with FoolScript!** 🚀
 
-For more information, visit our [GitHub repository](https://github.com/jtmuller5/crashify).
+For more information, visit our [GitHub repository](https://github.com/jtmuller5/foolscript).
 
