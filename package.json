@@ -1,8 +1,8 @@
 {
-  "name": "crashify-chat-extension",
-  "displayName": "Crashify Chat Extension",
-  "description": "Code in every language",
-  "version": "2.0.0",
+  "name": "fools-chat-extension",
+  "displayName": "Fool's Chat Extension",
+  "description": "Code like a Fool",
+  "version": "2.0.1",
   "publisher": "CodeontheRocks",
   "icon": "crashify.png",
   "engines": {
