@@ -9,6 +9,12 @@ FoolScript is a powerful VS Code chat extension designed to generate crash cours
 - **Interactive Chat Interface**: Communicate with FoolScript using natural language within the Copilot chat window.
 - **Code Examples**: Get relevant code snippets and examples for better understanding.
 
+### General Request
+
+The `@fools` chat participant defaults to converting your request directly into idiomatic code for the current language. Instead of phrasing your request as a question, you can simply state what you want to achieve, and FoolScript will generate the code for you.
+
+For example, typing `@fools an array that prints each element` will generate the appropriate code snippet for iterating over an array and printing each element.
+
 ### Available Commands
 
 FoolScript offers a variety of commands to generate documentation and code examples:
