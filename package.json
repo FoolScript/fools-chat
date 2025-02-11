@@ -2,7 +2,7 @@
   "name": "fools-chat-extension",
   "displayName": "Fool's Chat Extension",
   "description": "Code like a Fool",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "publisher": "CodeontheRocks",
   "icon": "joker.png",
   "engines": {
