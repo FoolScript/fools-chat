@@ -310,11 +310,11 @@ export class FoolScriptParticipant {
     const { language } = languageDetector.detect();
 
     // Replace common FoolScript placeholders in the request
-    const foolsRequest = request.prompt
-      .toLowerCase()
+    const foolsRequest = request.prompt;
+      /* .toLowerCase()
       .replace("juggle", "loop through")
       .replace("dance", "create a function that returns")
-      .replace("sing", "properly format and print out my");
+      .replace("sing", "properly format and print out my"); */
 
     const prompt = [
       vscode.LanguageModelChatMessage.User(
